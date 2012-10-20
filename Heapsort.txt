@@ -1,0 +1,23 @@
+
+def heapsort (lista) : 
+  
+	n=len(lista)-1 
+  	k=n/2 
+  	while (k>0) : 
+    		downheap(lista,n,k) 
+    		k-=1 
+  	while (n>=0) : 
+    		lista[1],lista[n]=lista[n],lista[1] 
+    		n-=1 
+    		downheap(lista,n,1) 
+  	return lista 
+ 
+def downheap (lista, n, k) : 
+  	v=lista[k] 
+  	while (k<=(n/2)) : 
+    		j=k+k 
+    		if (j<n and lista[j]=lista[j]) : 
+      			break 
+    		lista[k]=lista[j] 
+    		k=j 
+  	lista[k]=v 
